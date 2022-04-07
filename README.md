@@ -5,18 +5,32 @@ This is a really simple book management app done using smart contracts, this was
 ### Requisites
 
 - Node 16
+- [yarn](https://yarnpkg.com/)
 - A [Metamask](https://metamask.io/) account
 - An [Alchemy](https://www.alchemy.com/) account
 
 ## Configuring the Project
 
-First of all make sure all dependencies are installed:
+1. First of all make sure you have [corepack](https://nodejs.org/dist/latest/docs/api/corepack.html) available:
+
+On `node >=16.10`:
+```
+corepack enable
+```
+
+On `node <16.10`:
+```
+npm i -g corepack
+```
+
+2. Install dependencies:
 
 ```
-npm install
+npm i -g corepack
+yarn
 ```
 
-Then copy your `.env.tpl` to `.env` and add your `ALCHEMY_URL_KEY` & `ACCOUNT_PRIVATE_KEY` keys:
+3. Then copy your `.env.tpl` to `.env` and add your `ALCHEMY_URL_KEY` & `ACCOUNT_PRIVATE_KEY` keys:
 
 ```
 cp .env.tpl .env
@@ -24,6 +38,8 @@ vim .env
 ```
 
 _Note: you can get those values by following [this article](https://docs.alchemy.com/alchemy/introduction/getting-started/sending-txs#6.-create-the-.env-file)._
+
+4. Enjoy!
 
 ## Deploying Contracts to Rinkeby
 
