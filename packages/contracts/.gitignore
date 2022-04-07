@@ -5,6 +5,7 @@ coverage.json
 typechain
 abi
 dist
+.DS_Store
 
 #Hardhat files
 cache
