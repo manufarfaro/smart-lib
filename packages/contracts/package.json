@@ -14,7 +14,7 @@
         "compile": "npx hardhat compile",
         "clean": "npx rimraf dist artifacts cache typechain abi",
         "test": "npx hardhat test",
-        "format": "npx prettier --write \"contracts/**/*.sol\" \"test/**/*.ts\" \"lib/**/*.ts\" \"scripts/**/*.ts\" \"./*.ts\"",
+        "format": "npx prettier --write \"contracts/**/*.sol\" \"test/**/*.ts\" \"scripts/**/*.ts\" \"./*.ts\"",
         "lint": "npx prettier --check \"contracts/**/*.sol\" \"test/**/*.ts\"",
         "coverage": "npx hardhat coverage",
         "deploy:rinkeby": "npx hardhat run scripts/deploy.js --network rinkeby"

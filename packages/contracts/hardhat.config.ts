@@ -17,16 +17,16 @@ const config: HardhatUserConfig = {
   networks: {
     arbitrum_rinkeby: {
       url: process.env.ALCHEMY_ARBITRUM_RINKEBY_URL,
-      accounts: [process.env.ARBITRUM_RINKEBY_PRIVATE_KEY!]
+      accounts: [process.env.ARBITRUM_RINKEBY_PRIVATE_KEY!],
     },
     coverage: {
       url: "http://127.0.0.1:8555", // Coverage launches its own ganache-cli client
     },
   },
   abiExporter: {
-    path: './abi',
+    path: "./abi",
     runOnCompile: true,
-    clear: true
+    clear: true,
   },
   gasReporter: {
     currency: "USD",
