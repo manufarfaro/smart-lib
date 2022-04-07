@@ -1,5 +1,14 @@
-const { expect } = require("chai");
-const { ethers } = require("hardhat");
+import chai from "chai";
+import { ethers } from "hardhat";
+import { Signer } from "ethers";
+import type { Library } from "../typechain";
+import chaiAsPromised from "chai-as-promised";
+import { solidity } from "ethereum-waffle";
+
+chai.use(solidity);
+chai.use(chaiAsPromised);
+
+const { expect } = chai;
 
 const dummyFinishedBook = {
     id: 0,
@@ -18,12 +27,13 @@ const dummyUnfinishedBook = {
 }
 
 describe("Library Contract", () => {
-    let library;
-    let owner;
+    let library: Library;
+    let owner: Signer;
 
     before(async () => {
-        const Library = await ethers.getContractFactory("Library");
         [owner] = await ethers.getSigners();
+        const Library = await ethers.getContractFactory("Library", owner);
+        
         library = await Library.deploy();
         await library.deployed();
     })
@@ -43,13 +53,13 @@ describe("Library Contract", () => {
                 dummyUnfinishedBook.isFinished
             );
 
-            await expect(finishedBook)
+            expect(finishedBook)
                 .to.emit(library, "AddBook")
-                .withArgs(owner.address, dummyFinishedBook.id);
+                .withArgs(await owner.getAddress(), dummyFinishedBook.id);
 
-            await expect(unfinishedBook)
+            expect(unfinishedBook)
                 .to.emit(library, "AddBook")
-                .withArgs(owner.address, dummyUnfinishedBook.id);
+                .withArgs(await owner.getAddress(), dummyUnfinishedBook.id);
         });
     });
 
@@ -77,7 +87,7 @@ describe("Library Contract", () => {
 
     describe("when a book finished state is changed", () => {
         it("should emit a SetFinished event", async () => {
-            await (expect(library.setFinished(0, true))).
+            expect(library.setFinished(0, true)).
                 to.emit(library, "SetFinished")
                 .withArgs(0, true);
         })
