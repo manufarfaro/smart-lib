@@ -16,7 +16,7 @@ const config: HardhatUserConfig = {
   solidity,
   networks: {
     arbitrum_rinkeby: {
-      url: process.env.ALCHEMY_ARBITRUM_RINKEBY_URL,
+      url: process.env.ALCHEMY_ARBITRUM_RINKEBY_URL!,
       accounts: [process.env.ARBITRUM_RINKEBY_PRIVATE_KEY!],
     },
     coverage: {
