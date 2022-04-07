@@ -23,6 +23,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+      env:
+        ALCHEMY_ARBITRUM_RINKEBY_URL: ${{ secrets.ALCHEMY_ARBITRUM_RINKEBY_URL }}
+        ARBITRUM_RINKEBY_PRIVATE_KEY: ${{ secrets.ARBITRUM_RINKEBY_PRIVATE_KEY }}
+        ARBISCAN_API_KEY: ${{ secrets.ARBISCAN_API_KEY }}
     - run: npm ci
     - run: npm run lint
     - run: npm run build
