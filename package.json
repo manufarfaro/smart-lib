@@ -2,7 +2,8 @@
   "scripts": {
     "test": "npm run test --workspaces",
     "lint": "npm run lint --workspaces --if-present",
-    "build": "npm run build --workspaces"
+    "build": "npm run build --workspaces",
+    "format": "npm run format --workspaces --if-present"
   },
   "repository": {
     "type": "git",
