@@ -10,13 +10,13 @@ This is a really simple book management app done using smart contracts, this was
 
 ## Configuring the Project
 
-First of all make sure all dependencies are installed:
+1. First of all make sure all dependencies are installed:
 
 ```
 npm install
 ```
 
-Then copy your `.env.tpl` to `.env` and add your `ALCHEMY_URL_KEY` & `ACCOUNT_PRIVATE_KEY` keys:
+2. Then copy your `.env.tpl` to `.env` and add your `ALCHEMY_ARBITRUM_RINKEBY_URL` , `ARBITRUM_RINKEBY_PRIVATE_KEY` & `ARBISCAN_API_KEY` keys:
 
 ```
 cp .env.tpl .env
@@ -24,6 +24,12 @@ vim .env
 ```
 
 _Note: you can get those values by following [this article](https://docs.alchemy.com/alchemy/introduction/getting-started/sending-txs#6.-create-the-.env-file)._
+
+3.  Then build your project
+
+```
+npm run build
+```
 
 ## Deploying Contracts to Rinkeby
 
