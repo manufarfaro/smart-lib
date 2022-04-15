@@ -29,7 +29,7 @@ _Note: you can get those values by following [this article](https://docs.alchemy
 3. Add your GitHub personal token to your environment (can also be added at the end of your `.bashrc`):
 
 ```
-export $GITHUB_REGISTRY_TOKEN=<your_github_personal_access_token>
+export $REGISTRY_TOKEN=<your_github_personal_access_token>
 ```
 
 4.  Then build your project
