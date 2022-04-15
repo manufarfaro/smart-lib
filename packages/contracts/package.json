@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "build": "npm run clean && npm run compile && npm run build:ts && npm run build:declarations",
-        "build:ts": "tsc -p tsconfig.build.json",
+        "build:ts": "tsc -p tsconfig.build.json .",
         "build:declarations": "shx cp typechain/*.d.ts dist/typechain",
         "compile": "npx hardhat compile",
         "clean": "npx rimraf dist artifacts cache typechain abi",
