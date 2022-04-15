@@ -7,6 +7,7 @@ This is a really simple book management app done using smart contracts, this was
 - Node 16
 - A [Metamask](https://metamask.io/) account
 - An [Alchemy](https://www.alchemy.com/) account
+- A GitHub [personal token](https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ## Configuring the Project
 
@@ -25,7 +26,13 @@ vim .env
 
 _Note: you can get those values by following [this article](https://docs.alchemy.com/alchemy/introduction/getting-started/sending-txs#6.-create-the-.env-file)._
 
-3.  Then build your project
+3. Add your GitHub personal token to your environment (can also be added at the end of your `.bashrc`):
+
+```
+export $GITHUB_REGISTRY_TOKEN=<your_github_personal_access_token>
+```
+
+4.  Then build your project
 
 ```
 npm run build
