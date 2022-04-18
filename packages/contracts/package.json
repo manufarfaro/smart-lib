@@ -19,6 +19,13 @@
         "coverage": "npx hardhat coverage",
         "deploy:avax:testnet": "npx hardhat run scripts/deploy.ts --network avax_testnet"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/manufarfaro/smart-lib"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/@manufarfaro"
+    },
     "devDependencies": {
         "@atixlabs/hardhat-time-n-mine": "^0.0.5",
         "@nomiclabs/hardhat-ethers": "^2.0.5",
