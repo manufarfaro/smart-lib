@@ -15,9 +15,9 @@ const solidity = "0.8.4";
 const config: HardhatUserConfig = {
   solidity,
   networks: {
-    arbitrum_rinkeby: {
-      url: process.env.ALCHEMY_ARBITRUM_RINKEBY_URL!,
-      accounts: [process.env.ARBITRUM_RINKEBY_PRIVATE_KEY!],
+    avax_testnet: {
+      url: process.env.AVALANCHE_TESTNET_URL!,
+      accounts: [process.env.METAMASK_PRIVATE_KEY!],
     },
     coverage: {
       url: "http://127.0.0.1:8555", // Coverage launches its own ganache-cli client
