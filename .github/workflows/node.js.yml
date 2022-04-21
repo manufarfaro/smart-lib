@@ -43,10 +43,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         registry-url: 'https://npm.pkg.github.com'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - run: npm publish --workspace=contracts
+    - run: npm publish --workspace @manufarfaro/sl-contracts
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: npm version minor --workspace=contracts
+    - run: npm version minor --workspace @manufarfaro/sl-contracts
   
   deploy:
     runs-on: ubuntu-latest

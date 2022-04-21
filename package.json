@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/manufarfaro/smart-lib#readme",
   "workspaces": [
-    "contracts",
-    "app"
+    "packages/contracts",
+    "packages/app"
   ]
 }
