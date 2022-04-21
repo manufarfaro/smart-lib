@@ -38,20 +38,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js lts
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: lts
         cache: 'npm'
     - run: npm ci
     - uses: actions/setup-node@v2
       with:
         registry-url: 'https://npm.pkg.github.com'
     - run: npm publish --workspaces=contracts
-    - run: npm version minor --workspaces=contracts
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+    - run: npm version minor --workspaces=contracts
   
   deploy:
     runs-on: ubuntu-latest
@@ -60,7 +59,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: "lts"
         cache: 'npm'
     - run: npm ci
     - run: npm run build
