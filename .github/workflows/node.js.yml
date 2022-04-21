@@ -59,6 +59,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --workspace @manufarfaro/sl-app
+    - run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ./packages/app/.npmrc
     - uses: amondnet/vercel-action@v20
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
