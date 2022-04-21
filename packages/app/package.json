@@ -1,6 +1,7 @@
 {
   "name": "@manufarfaro/sl-app",
   "version": "0.1.0",
+  "private": "true",
   "scripts": {
     "codegen": "graphql-let",
     "dev": "npm run codegen && next",
