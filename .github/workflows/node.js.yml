@@ -55,7 +55,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
     - uses: amondnet/vercel-action@v20
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
