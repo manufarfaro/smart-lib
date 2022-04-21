@@ -57,6 +57,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    - run: echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" >> ./packages/app/.npmrc
     - run: npm run build --workspace @manufarfaro/sl-app
     - uses: amondnet/vercel-action@v20
       env:
