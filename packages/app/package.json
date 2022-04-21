@@ -7,7 +7,8 @@
     "dev": "npm run codegen && next",
     "build": "npm run codegen && next build",
     "test": "npm run codegen && jest",
-    "start": "next start"
+    "start": "next start",
+    "next": "next"
   },
   "dependencies": {
     "@apollo/client": "^3.1.3",

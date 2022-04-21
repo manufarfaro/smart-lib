@@ -35,6 +35,10 @@ jobs:
       - run: npm test
 
   publish-gpr:
+    on:
+      push:
+        branches:
+        - main
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -52,12 +56,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --workspace @manufarfaro/sl-app
     - uses: amondnet/vercel-action@v20
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
