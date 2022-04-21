@@ -34,23 +34,17 @@ jobs:
     - run: npm run build
     - run: npm test
 
-  publish:
+  publish-gpr:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
+        node-version: '16.x'
         registry-url: 'https://npm.pkg.github.com'
     - run: npm publish --workspaces=contracts
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: npm version minor --workspaces=contracts
   
   deploy:
     runs-on: ubuntu-latest
