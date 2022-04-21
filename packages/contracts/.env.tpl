@@ -1,4 +1,4 @@
 # Used for local development
-ALCHEMY_ARBITRUM_RINKEBY_URL="<change_me>"
-ARBITRUM_RINKEBY_PRIVATE_KEY="<change_me>"
+AVALANCHE_TESTNET_URL="<change_me>"
+METAMASK_PRIVATE_KEY="<change_me>"
 ARBISCAN_API_KEY="<change_me>"
