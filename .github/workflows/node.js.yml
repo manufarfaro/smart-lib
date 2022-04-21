@@ -44,8 +44,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    - uses: actions/setup-node@v2
+      with:
+        registry-url: 'https://npm.pkg.github.com'
     - run: npm publish --workspaces=contracts
     - run: npm version minor --workspaces=contracts
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
   
   deploy:
     runs-on: ubuntu-latest
