@@ -60,6 +60,8 @@ jobs:
     - run: npm ci
     - run: npm run build
     - uses: amondnet/vercel-action@v20
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         vercel-token: ${{ secrets.VERCEL_TOKEN }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -67,4 +69,5 @@ jobs:
         vercel-org-id: ${{ secrets.ORG_ID}}
         vercel-project-id: ${{ secrets.PROJECT_ID}}
         working-directory: ./packages/app
+      
     
