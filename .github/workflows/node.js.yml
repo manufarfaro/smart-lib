@@ -58,7 +58,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build --workspace @manufarfaro/sl-contacts
+    - run: npm run build --workspace @manufarfaro/sl-app
     - uses: amondnet/vercel-action@v20
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
