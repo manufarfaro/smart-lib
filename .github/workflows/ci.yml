@@ -34,6 +34,6 @@ jobs:
         id: pack
         run: echo "tgz=$(npm pack -w packages/contracts | tail -n1)" >> $GITHUB_OUTPUT
       - name: Install packed contracts into app
-        run: npm --prefix packages/app install ./${{ steps.pack.outputs.tgz }} --no-save
+        run: npm --prefix packages/app install ./${{ steps.pack.outputs.tgz }} --no-save --legacy-peer-deps
       - run: npm run build -w packages/app
       - run: npm test -w packages/app
