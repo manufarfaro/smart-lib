@@ -1,5 +1,10 @@
 # Smart Lib
 
+[status: deprecated](https://img.shields.io/badge/status-deprecated-critical.svg)](https://github.com/manufarfaro/smart-lib)
+
+> [!WARNING]
+> This repository is deprecated and will be archived. No further maintenance or updates are planned.
+
 Simple library app powered by a Solidity `Library` contract and a Next.js frontend.
 
 ## Screenshot
