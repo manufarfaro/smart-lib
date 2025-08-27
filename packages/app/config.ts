@@ -1,0 +1,1 @@
+export const contractAddress = process.env.NEXT_PUBLIC_LIBRARY_CONTRACT_ADDRESS || ""

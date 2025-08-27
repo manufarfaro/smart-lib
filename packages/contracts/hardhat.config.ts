@@ -1,9 +1,8 @@
 import "dotenv/config";
 
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomiclabs/hardhat-waffle";
+import "@nomicfoundation/hardhat-chai-matchers";
 import "@typechain/hardhat";
-import "@nomiclabs/hardhat-ganache";
 import "@atixlabs/hardhat-time-n-mine";
 import "hardhat-abi-exporter";
 import "hardhat-deploy";
@@ -14,6 +13,10 @@ const solidity = "0.8.4";
 
 const config: HardhatUserConfig = {
   solidity,
+  typechain: {
+    outDir: "typechain",
+    target: "ethers-v6",
+  },
   networks: {
     avax_testnet: {
       url: process.env.AVALANCHE_TESTNET_URL!,

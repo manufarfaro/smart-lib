@@ -6,7 +6,7 @@ const deployContracts = async () => {
   const deployedContracts = contractDefinitions.map(async (definition) => {
     const contractFactory = await ethers.getContractFactory(definition);
     const contract = await contractFactory.deploy();
-    await contract.deployed();
+    await contract.waitForDeployment();
     return contract;
   });
 
@@ -14,13 +14,11 @@ const deployContracts = async () => {
   console.log("Contracts were deployed.\n");
   console.log("Deployed contracts details:");
 
-  deployedContracts.forEach(async (contract, i) =>
-    console.log(
-      `- ${contractDefinitions[i]} contract deployed to: ${
-        (await contract).address
-      }`
-    )
-  );
+  for (let i = 0; i < deployedContracts.length; i++) {
+    const c = await deployedContracts[i];
+    const addr = await c.getAddress();
+    console.log(`- ${contractDefinitions[i]} contract deployed to: ${addr}`);
+  }
 };
 
 const runDeploy = async () => {

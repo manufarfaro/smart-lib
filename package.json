@@ -3,7 +3,9 @@
     "test": "npm run test --workspaces",
     "lint": "npm run lint --workspaces --if-present",
     "build": "npm run build --workspaces",
-    "format": "npm run format --workspaces --if-present"
+    "format": "npm run format --workspaces --if-present",
+    "dev": "npm run dev -w packages/app",
+    "start": "npm run start --workspaces --if-present"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "workspaces": [
     "packages/contracts",
     "packages/app"
-  ]
+  ],
+  "devDependencies": {
+    "classnames": "2.3.1"
+  }
 }
