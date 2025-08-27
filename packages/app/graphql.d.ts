@@ -4,3 +4,7 @@ declare module '*.graphqls' {
 }
 
 declare module '*.yml'
+
+declare module '@manufarfaro/sl-contracts' {
+  export const LibraryFactory: any
+}
