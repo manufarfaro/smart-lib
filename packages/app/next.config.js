@@ -1,5 +1,13 @@
+const path = require('path')
+
 module.exports = {
   webpack(config, options) {
+    config.resolve = config.resolve || {}
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      '@manufarfaro/sl-contracts': path.resolve(__dirname, '../contracts/dist/src/index.js'),
+    }
+
     config.module.rules.push({
       test: /\.graphql$/,
       exclude: /node_modules/,
