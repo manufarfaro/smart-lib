@@ -43,6 +43,9 @@ function BookList() {
   }, [])
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return () => {}
+    }
     let mounted = true
     ;(async () => {
       if (!mounted) return

@@ -20,7 +20,6 @@ jobs:
     strategy:
       matrix:
         node-version: [24.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
       - uses: actions/checkout@v3
@@ -32,7 +31,3 @@ jobs:
       - run: npm ci
       - run: npm run build -w packages/app
       - run: npm test -w packages/app
-
-  # Additional jobs (e.g., publishing) were removed as requested
-      
-    

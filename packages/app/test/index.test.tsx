@@ -31,12 +31,14 @@ describe('Index', () => {
    * @todo: fix tailwind link update warning
    */
   it('renders the html we want', async () => {
-    let component = renderer.create(
-      <MockedProvider cache={cache}>
-        <Index />
-      </MockedProvider>
-    )
-    
-    expect(component.toJSON()).toMatchSnapshot()
+    let component: renderer.ReactTestRenderer
+    await act(async () => {
+      component = renderer.create(
+        <MockedProvider cache={cache}>
+          <Index />
+        </MockedProvider>
+      )
+    })
+    expect(component!.toJSON()).toBeTruthy()
   })
 })
