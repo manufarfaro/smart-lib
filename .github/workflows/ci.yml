@@ -30,5 +30,10 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build -w packages/contracts
+      - run: npm pack -w packages/contracts
+      - name: Install app and local contracts tarball
+        run: |
+          CONTRACT_TGZ=$(ls packages/contracts/*.tgz)
+          npm install $CONTRACT_TGZ -w packages/app
       - run: npm run build -w packages/app
       - run: npm test -w packages/app
